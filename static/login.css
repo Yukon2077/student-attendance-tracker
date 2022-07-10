@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: 0;
+	font: 1rem 'Source Sans Pro', sans-serif !important;
+}
+
+body{
+background-color: #ee5166;
+background-image: linear-gradient(315deg, #ee5166 0%, #f08efc 74%);
+}
+
+.bor{
+	border: 1px solid red;
+}
+
+.navbar{
+	background: rgba(255, 255, 255, 0);
+}
+
+.navbar-brand{
+	font: 2rem 'Source Sans Pro', sans-serif !important;
+	font-weight: bolder;
+	color: #fff !important;
+	padding: 5px 20px;
+}
+
+.navbar-brand:hover{
+	color: #a8dadc !important;
+	transition: 0.2s ease-in-out;
+}
+
+.navbar-brand > span{
+	text-transform: uppercase;
+	font-size: 2.5rem !important;
+	color: #a8dadc !important;
+}
+
+.navbar-nav{
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.nav-link{
+	font: 1.5rem 'Source Sans Pro', sans-serif !important;
+	color: #000 !important;
+}
+
+.nav-link:hover{
+	color: red !important;
+	transition: 0.2s ease-in-out;
+}
+
+.main{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+
+.box{
+	padding: 30px;
+	background: rgba(255, 255, 255, 0.09);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.1px);
+	-webkit-backdrop-filter: blur(10.1px);
+}
+
+.title{
+	padding: 20px;
+	text-align:center;
+	font: 2rem 'Source Sans Pro', sans-serif !important;
+	font-weight: bold;
+	letter-spacing:10px
+}
+
+.title, label{
+	color: #fff;
+}
+
+.form-container{
+	padding: 20px;
+}
+
+.row{
+	margin: 10px 0;
+	padding: 0 30px;
+	display: flex;
+}
+
+.row:nth-of-type(5),.row:nth-of-type(6){
+	padding: 20px 0;
+}
+
+label{
+	letter-spacing: 3px;
+}
+
+label,input{
+	margin: 10px 0;
+	font: 1.3rem 'Source Sans Pro', sans-serif;
+}
+
+input{
+	padding: 5px;
+	outline: none;
+	border: 1px solid lightblue;
+	border-radius: 10px;
+}
+
+input:focus{
+	border: 2px solid cyan;
+}
+
+input[type="submit"]{
+	margin: 20px auto;
+	background-color: #2a2a72;
+	background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+	background-size: 1px 4em;
+	border: none;
+	color: #fff;
+	width: 10em;
+	transition: background 0.4s;
+}
+
+input[type="submit"]:hover{
+	background-color: #2a2a72;
+	background-image: linear-gradient(135deg, #2a2a72 0%, #009ffd 74%);
+	transition: background 0.4s;
+	background-position: 10em;
+	
+}

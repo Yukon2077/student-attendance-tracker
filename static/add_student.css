@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+*{
+	padding: 0;
+	margin: 0;
+	font: 1rem 'Source Sans Pro', sans-serif;
+}
+
+.bor{
+	border: 1px solid red;
+}
+
+body{
+	background-color: #ee5166;
+background-image: linear-gradient(315deg, #ee5166 0%, #f08efc 74%);
+}
+
+.navbar{
+		background: rgba(255, 255, 255, 0);
+}
+
+.navbar-brand{
+	padding:5px 15px;
+	font: 2rem 'Source Sans Pro', sans-serif !important;
+	color: #fff !important;
+}
+
+.navbar-brand > span{
+	text-transform: uppercase;
+	font-size: 2.5rem !important;
+	color: #a8dadc;
+}
+
+.navbar-brand:hover{
+	color: #a8dadc !important;
+}
+
+.nav{
+	width: 100%;
+	min-height: 70px;
+	height: fit-content;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.nav-link{
+	font: 1.5rem 'Source Sans Pro', sans-serif !important;
+	color: #fff !important;
+}
+
+.nav-link:hover{
+	font-weight: bold !important;
+	transition: 0.2s ease-in-out;
+}
+
+.nav-item{
+	padding: 10px 20px;
+}
+
+.main{
+	min-height: 100vh;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.box{
+	padding: 30px;
+	width: 500px;
+	background: rgba(255, 255, 255, 0.09);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.1px);
+	-webkit-backdrop-filter: blur(10.1px);
+}
+
+.title, label{
+	color: #fff;
+}
+
+.title{
+	padding: 20px;
+	text-align:center;
+	font: 2rem 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+	letter-spacing:10px;	
+}
+
+.form-container{
+	padding: 20px;
+}
+
+.row{
+	padding: 0 30px;
+	display: flex;
+}
+
+.row .info{
+	color: #fff;
+	text-align: center;
+}
+
+label{
+	letter-spacing: 3px;
+}
+
+label,input{
+	margin: 10px 0;
+	font: 1.3rem 'Source Sans Pro', sans-serif;
+}
+
+input{
+	padding: 5px;
+	outline: none;
+	border: 1px solid lightblue;
+	border-radius: 10px;
+}
+
+input:focus{
+	border: 2px solid cyan;
+
+}
+
+
+input[type="submit"],input[type="reset"]{
+	margin: 20px auto;
+	background-color: #2a2a72;
+	background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+	border: none;
+	color: #fff;
+	width: 10em;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover{
+	background-color: #2a2a72;
+	background-image: linear-gradient(135deg, #2a2a72 0%, #009ffd 74%);
+}

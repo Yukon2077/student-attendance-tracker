@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard ADMIN</title>
+	<link rel="stylesheet" type="text/css" href="static/admin_dashboard.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<header>
+		<!-- navigation  -->
+		<nav class="navbar navbar-expand-lg fixed-top">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">
+		    	<span>S</span>tudent&nbsp;<span>A</span>ttendance&nbsp;<span>T</span>racker
+		    </a>
+		    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button> -->
+		    <div>
+		      <ul class="navbar-nav">
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">Admin Dashboard</a>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+	</header>
+	<main class="main">
+		<div class="nav-card">
+			<a href="add_attendance">Add Attendance</a>
+		</div>
+		<div class="nav-card">
+			<a href="add_student">Add Student details</a>
+		</div>
+		<div class="nav-card">
+			<a href="view_student_details">View Student details</a>
+			<div>		
+				<form action="/view_student_details" method="GET" class="form-container">
+					<input type="date" name="date_of_attendance">
+					<input type="submit" value="Search" />
+				</form>		
+			</div>
+		</div>
+	</main>
+</body>
+</html>
