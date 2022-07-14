@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ name }}'s Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/static/student_dashboard.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+</head>
+<body>
+	<header>
+		<!-- navigation  -->
+		<nav class="navbar navbar-expand-lg fixed-top">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">
+		    	{{ name }}'s Attendance
+		    </a>
+		    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button> -->
+		    <div>
+		      <ul class="navbar-nav">
+		        <li class="nav-item">
+		          <a class="nav-link" href="/">Logout</a>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+	</header>
+	<main class="main">
+		<div class="main-content">
+			<div> Total Percentage : {{ percentage }}%</div>
+			<div class="Table">
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Period 1</th>
+							<th>Period 2</th>
+							<th>Period 3</th>
+							<th>Period 4</th>
+							<th>Period 5</th>
+							<th>Period 6</th>
+							<th>Period 7</th>
+							<th>Period 8</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for i in attendance %}
+						<tr>
+							<td>{{ i[0] }}</td>
+							{% for j in i[1] %}
+							<td>
+								{% if j == '1' %}
+								<i class="bi bi-check text-success"></i>
+								{% else %}
+								<i class="bi bi-x text-danger"></i>
+								{% endif %}
+							</td>
+							{% endfor %}
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		
+	</footer>
+</body>
+</html>

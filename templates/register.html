@@ -1,6 +1,6 @@
 {% extends 'skeleton.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block body %}
 
@@ -13,8 +13,8 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navigationItems">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a href="/login" class="nav-link active">Login</a></li>
-					<li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
+					<li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+					<li class="nav-item"><a href="/register" class="nav-link active">Register</a></li>
 					<li class="nav-item"><a href="/about-us" class="nav-link">About Us</a></li>
 				</ul>
 				</div>
@@ -24,16 +24,14 @@
 
 	<form class="mx-auto form-container my-4 p-4" method="post">
 		<fieldset>
-			<legend>Login</legend>
+			<legend>Register</legend>
+			<label class="form-label">Name</label>
+			<input type="text" name="name" class="form-control">
 			<label class="form-label">Email</label>
 			<input type="email" name="email" class="form-control">
 			<label class="form-label">Password</label>
 			<input type="password" name="password" class="form-control"><br>
-			<div class="form-check w-100 mx-100">
-				<input type="checkbox" name="staff" class="form-check-input">
-				<label class="form-check-label">Login as staff</label>
-			</div><br>
-			<input type="submit" value="Login" class="btn btn-primary w-100">
+			<input type="submit" value="Register" class="btn btn-primary w-100">
 			{% if failure %}
 			<p class=" m-4 alert alert-danger mx-auto text-dark text-center">Invalid email or password</p>
 			{% endif %}
