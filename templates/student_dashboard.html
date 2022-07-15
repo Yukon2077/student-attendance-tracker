@@ -13,12 +13,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navigationItems">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					{% if 'is_logged_in' in session %}
 					<li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-					{% else %}
-					<li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
-					<li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
-					{% endif %}
 					<li class="nav-item"><a href="/about-us" class="nav-link">About Us</a></li>
 				</ul>
 				</div>
@@ -26,33 +21,35 @@
 		</nav>
 	</header>
 
-	<form class="m-3">
-		<label class="form-label" for="date_of_attendance">Date of attendance</label>
-		<input type="date" name="date_of_attendance" value="{{ date_of_attendance }}" class="form-control">
-		<input type="submit" value="View attendance" class="btn btn-primary w-100 my-2">
-		<div class="table-responsive">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Register Number</th>
-						<th>Name</th>
-						{% for i in range(no_of_periods) %}
-						<th>Period {{ i + 1 }}</th>
-						{% endfor %}
-					</tr>
-				</thead>
-				<tbody>
-					{% for i in students %}
-					<tr>
-						<td>{{ i[1] }}</td>
-						<td>{{ i[2] }}</td>
-						{% for j in range(no_of_periods) %}
-						<td><input type="checkbox" name="{{ i | string + '_' + j | string }}" class="attendance-checkbox" checked></td>
-						{% endfor %}
-					</tr>
+	<div class="table-responsive m-2">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Date of Attendance</th>
+					{% for i in range(no_of_periods) %}
+					<th>Period {{ i + 1 }}</th>
 					{% endfor %}
-				</tbody>
-			</table>
-	</form>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in attendance %}
+				<tr>
+					<td>{{ i.date_of_attendance }}</td>
+					{% for j in range(no_of_periods) %}
+					<td>
+						{% if i.periods_attended[j] == '1' %}
+						<i class="bi bi-check text-success"></i>
+						{% elif i.periods_attended[j] == '0' %}
+						<i class="bi bi-x text-danger"></i>
+						{% else %}
+						<i class="bi bi-dash"></i>
+						{% endif %}
+					</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 	
 {% endblock %}

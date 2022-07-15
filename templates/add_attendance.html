@@ -38,10 +38,10 @@
 				<tbody>
 					{% for i in students %}
 					<tr>
-						<td>{{ i[1] }}</td>
-						<td>{{ i[2] }}</td>
+						<td>{{ i.register_number }}</td>
+						<td>{{ i.name }}</td>
 						{% for j in range(no_of_periods) %}
-						<td><input type="checkbox" name="{{ i | string + '_' + j | string }}" class="attendance-checkbox" checked></td>
+						<td><input type="checkbox" name="{{ i.student_id | string + '_' + j | string }}" class="attendance-checkbox" checked></td>
 						{% endfor %}
 					</tr>
 					{% endfor %}
