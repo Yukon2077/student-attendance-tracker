@@ -37,12 +37,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					{% for i in students %}
+					{% for i in attendance %}
 					<tr>
-						<td>{{ i[1] }}</td>
-						<td>{{ i[2] }}</td>
-						{% for j in range(no_of_periods) %}
-						<td><input type="checkbox" name="{{ i | string + '_' + j | string }}" class="attendance-checkbox" checked></td>
+						<td>{{ i.student.register_number }}</td>
+						<td>{{ i.student.name }}</td>
+						{% for j in i.periods_attended %}
+						<td>
+							{% if j == '1' %}
+							<i class="bi bi-check text-success"></i>
+							{% else %}
+							<i class="bi bi-x text-danger"></i>
+							{% endif %}
+						</td>
 						{% endfor %}
 					</tr>
 					{% endfor %}
